@@ -1,0 +1,73 @@
+= Host-specific information ====================================================
+$> hostname; uname -msr
+e1z2r5p46.42.us.org
+Darwin 17.4.0 x86_64
+$> date
+Tue Nov 27 02:14:10 PST 2018
+$> gcc --version
+Configured with: --prefix=/Library/Developer/CommandLineTools/usr --with-gxx-include-dir=/usr/include/c++/4.2.1
+Apple LLVM version 9.0.0 (clang-900.0.39.2)
+Target: x86_64-apple-darwin17.4.0
+Thread model: posix
+InstalledDir: /Library/Developer/CommandLineTools/usr/bin
+$> clang --version
+Apple LLVM version 9.0.0 (clang-900.0.39.2)
+Target: x86_64-apple-darwin17.4.0
+Thread model: posix
+InstalledDir: /Library/Developer/CommandLineTools/usr/bin
+
+= User files collection ========================================================
+Collecting user files from Vogsphere
+Repository URL: auto-exam/2018/c-exam-alone-in-the-dark-intermediate/practice-exam_20181127/efriedma2
+
+= Git history ==================================================================
+$> git -C /var/folders/vv/1pnt389j7bv3ln16p0x9n5k00000gp/T/tmpy0bSmt/user log --pretty='%H - %an, %ad : %s'
+998195834782a5773aba57c57da101ba1c868f24 - Elliot Friedman, Tue Nov 27 02:11:52 2018 -0800 : Added stack
+6cd229f933a254b71a68f352f75c07f4b6ae1b36 - Elliot Friedman, Tue Nov 27 01:07:35 2018 -0800 : hello
+ 
+= Collected files ==========================================
+$> ls -lAR /var/folders/vv/1pnt389j7bv3ln16p0x9n5k00000gp/T/tmpy0bSmt/user
+total 8
+-rw-r--r--  1 deepthought  deepthought  537 Nov 27 02:14 __GIT_HISTORY
+drwxr-xr-x  3 deepthought  deepthought  102 Nov 27 02:14 is_anagram
+drwxr-xr-x  3 deepthought  deepthought  102 Nov 27 02:14 stack
+
+/var/folders/vv/1pnt389j7bv3ln16p0x9n5k00000gp/T/tmpy0bSmt/user/is_anagram:
+total 8
+-rw-r--r--  1 deepthought  deepthought  1594 Nov 27 02:14 is_anagram.c
+
+/var/folders/vv/1pnt389j7bv3ln16p0x9n5k00000gp/T/tmpy0bSmt/user/stack:
+total 8
+-rw-r--r--  1 deepthought  deepthought  1738 Nov 27 02:14 stack.c
+ 
+= stack ========================================================================
+$> gcc -Wextra -Wall -Werror main.c stack.c -o user_exe 
+
+= Test 1 ===================================================
+$> ./8y2zbe8u0li1gnr9hvm4dkje NULL
+$> diff -U 3 user_output_test1 test1.output | cat -e
+--- user_output_test1	2018-11-27 02:14:12.000000000 -0800$
++++ test1.output	2018-11-27 02:14:12.000000000 -0800$
+@@ -8,14 +8,14 @@$
+ is empty : NO$
+ TEST 2 --------------------------$
+ stack 1 : $
+-stack 2 : C^L^Q^? $
++stack 2 : NULL $
+ stack 1 : is empty : YES$
+ stack 1 : pop : (null)$
+ stack 1 : peek : (null)$
+ stack 2 : is empty : NO$
+ TEST 3 --------------------------$
+-stack 2 : peek : C^L^Q^?$
++stack 2 : peek : NULL$
+ stack 1 : is empty : NO$
+ stack 2 : is empty : YES$
+-stack 1 : pop : @$^?$
++stack 1 : pop : NULL$
+ stack 1 : is empty : YES$
+
+Diff KO :(
+Grade: 0
+
+= Final grade: 0 ===============================================================
