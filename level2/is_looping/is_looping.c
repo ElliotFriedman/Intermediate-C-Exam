@@ -1,38 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_doublon.c                                    :+:      :+:    :+:   */
+/*   is_looping.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: exam <marvin@42.fr>                        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/12/11 09:04:52 by exam              #+#    #+#             */
-/*   Updated: 2018/12/11 09:09:31 by exam             ###   ########.fr       */
+/*   Created: 2018/12/11 10:10:41 by exam              #+#    #+#             */
+/*   Updated: 2018/12/11 10:15:58 by exam             ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+struct s_node {
+	int value;
+	struct s_node *next;
+};
 
-void	print_doublon(int *a, int na, int *b, int nb)
+int		is_looping(struct s_node *node)
 {
-	int		ai = 0;
-	int		bi = 0;
-	int		b00l = 0;
+	struct s_node *s0 = 0;
+	struct s_node *s1 = 0;
 
-	while (ai < na && bi < nb)
+	if (!node)
+		return 0;
+	s0 = node;
+	s1 = node->next;
+	while (s1 && s0)
 	{
-		if (a[ai] == b[bi])
-		{
-			if (b00l)
-				printf(" ");
-			printf("%d", a[ai]);
-			ai++;
-			bi++;
-			b00l = 1;
-		}
-		else if (a[ai] > b[bi])
-			bi++;
-		else
-			ai++;
+		if (s1 == s0)
+			return 1;
+		s1 = s1->next;
+		if (s1)
+			s1 = s1->next;
+		s0 = s0->next;
 	}
-	printf("\n");
+	return 0;
 }
