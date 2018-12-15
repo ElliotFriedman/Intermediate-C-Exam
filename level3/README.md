@@ -1,4 +1,4 @@
-# Level 3 ---
+# --- Level 3 ---
 
 Trees are tricky if you don't understand them, just make sure you use recursion to solve these problems.
 
@@ -8,6 +8,7 @@ A tree is just a linked list with two next values.
 
 Here is what a tree looks like in memory:
 
+![Tree](tree.png)
 
             A
            / \
