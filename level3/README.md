@@ -9,15 +9,15 @@ A tree is just a linked list with two next values.
 Here is what a tree looks like in memory:
 
 
-			A
-		   / \
+            A
+           / \
 		  /   \
 		 /     \
 		B       C
        / \     / \
-	  D   E   F   G
-	 / \
-	/   \
+      D   E   F   G
+     / \
+    /   \
    /     \
   H       I
 
