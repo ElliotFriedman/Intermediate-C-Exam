@@ -9,16 +9,3 @@ A tree is just a linked list with two next values.
 Here is what a tree looks like in memory:
 
 ![Tree](tree.png)
-
-            A
-           / \
-		  /   \
-		 /     \
-		B       C
-       / \     / \
-      D   E   F   G
-     / \
-    /   \
-   /     \
-  H       I
-
